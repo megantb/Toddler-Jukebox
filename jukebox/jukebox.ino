@@ -5,7 +5,7 @@
 
 TMRpcm tmrpcm; // create an object for use in this sketch
 int songselect = 0
-int song1=5;  //setup song1 button pin
+int song1=5;  //song1 button pin
 int song2=6;  //song2 button pin
 int song3=7;  //song3 button pin
 int song4=8;  //song4 button pin
@@ -28,9 +28,7 @@ void setup()
  }
 
  tmrpcm.setVolume(5); //
- tmrpcm.play("song1.wav"); //the sound file "song" will play each time the arduino powers up, or is reset
-                          //try to provide the file name with extension
-                     
+                      
 }
 
 
