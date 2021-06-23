@@ -17,7 +17,7 @@ if(!SD.begin(SD_ChipSelectPin))
   return;
 }
 tmrpcm.setVolume(6);
-tmrpcm.play((char*)"song1.wav");
+tmrpcm.play((char*)"Daniel.wav");
 
 }
 
@@ -30,6 +30,6 @@ void loop() {
 void play (void)
 {
 
-  tmrpcm.play((char*)"song1.wav");
-  delay(10000);
+  tmrpcm.play((char*)"Daniel.wav");
+  delay(150000);
 }
