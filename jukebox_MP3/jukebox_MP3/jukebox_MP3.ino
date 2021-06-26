@@ -1,24 +1,3 @@
-/***************************************************
-DFPlayer - A Mini MP3 Player For Arduino
- <https://www.dfrobot.com/product-1121.html>
- 
- ***************************************************
- This example shows the basic function of library for DFPlayer.
- 
- Created 2016-12-07
- By [Angelo qiao](Angelo.qiao@dfrobot.com)
- 
- GNU Lesser General Public License.
- See <http://www.gnu.org/licenses/> for details.
- All above must be included in any redistribution
- ****************************************************/
-
-/***********Notice and Trouble shooting***************
- 1.Connection and Diagram can be found here
- <https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299#Connection_Diagram>
- 2.This code is tested on Arduino Uno, Leonardo, Mega boards.
- ****************************************************/
-
 #include "Arduino.h"
 #include "SoftwareSerial.h"
 #include "DFRobotDFPlayerMini.h"
@@ -26,7 +5,6 @@ DFPlayer - A Mini MP3 Player For Arduino
 
 SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
-void printDetail(uint8_t type, int value);
 
 const int buttonPin2 = 2;
 const int buttonPin3 = 3;
@@ -63,41 +41,37 @@ void setup()
   pinMode(buttonPin5, INPUT);
   
   myDFPlayer.volume(30);  //Set volume value. From 0 to 30
-  //myDFPlayer.play(4);  //Play the first mp3
+
 }
 
 void loop()
-{
-  
+{  
 
   // read the state of the pushbutton value:
   button2State = digitalRead(buttonPin2);
   button3State = digitalRead(buttonPin3);
   button4State = digitalRead(buttonPin4);
   button5State = digitalRead(buttonPin5);
+  
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
   if (button2State == HIGH) {
     play(1);
   }
-//  if (button3State == HIGH) {
-//    play(2);
-//  }
-//  if (button4State == HIGH) {
-//    play(3);
-//  }
-//  if (button5State == HIGH) {
-//    play(4);
-//  }
+  if (button3State == HIGH) {
+    play(2);
+  }
+  if (button4State == HIGH) {
+    play(3);
+  }
+  if (button5State == HIGH) {
+    play(4);
+  }
   
 
 }
 
 void play(int s)
 {
-//    static unsigned long timer = millis();
-//    if (millis() - timer > 150000) {
-//    timer = millis();
-    //myDFPlayer.next();  //Play next mp3 every 3 second.
     
     myDFPlayer.play(s);  //Play the first mp3
     delay(10000);
