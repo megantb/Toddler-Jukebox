@@ -42,6 +42,7 @@
 <ol>
   <li>Files saved on the microSD card must be in a folder called "mp3".</li>
   <li>Song filenames must be in a "000#.mp3" format.</li>
+  <li>DF Mini MP3 Player Helpful Article (<a href="https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299">link</a>)</li>
 </ol>
 
 <h2>mp3 Song Assignments</h2>
