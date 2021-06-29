@@ -1,4 +1,8 @@
-Toddler Jukebox v1.0
+<!DOCTYPE html>
+<html>
+
+
+<h1>Toddler Jukebox v1.0<h1>
 
 Folder Structure
 - jukebox_MP3 //Arduino Code for playing mp3 files
