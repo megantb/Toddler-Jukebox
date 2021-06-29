@@ -40,7 +40,7 @@ void setup()
   pinMode(buttonPin4, INPUT);
   pinMode(buttonPin5, INPUT);
   
-  myDFPlayer.volume(30);  //Set volume value. From 0 to 30
+  myDFPlayer.volume(15);  //Set volume value. From 0 to 30
 
 }
 
