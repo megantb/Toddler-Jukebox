@@ -6,13 +6,14 @@
 SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
 
+//Initilize the Digital pins for the push buttons for the songs
 const int buttonPin2 = 2;
 const int buttonPin3 = 3;
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
 
-// variables will change:
-int button2State = 0;         // variable for reading the pushbutton status
+// Default push button status
+int button2State = 0;         
 int button3State = 0;
 int button4State = 0;
 int button5State = 0;
@@ -20,7 +21,7 @@ int button5State = 0;
 void setup()
 {
   mySoftwareSerial.begin(9600);
-  Serial.begin(115200);
+  Serial.begin(115200); //Initilize Serial Monitor for status and debugging
   Serial.println();
   Serial.println(F("DFRobot DFPlayer Mini Demo"));
   Serial.println(F("Initializing DFPlayer ... (May take 3~5 seconds)"));
@@ -35,6 +36,7 @@ void setup()
   }
   Serial.println(F("DFPlayer Mini online."));
 
+  //Set push button pin to an INPUT
   pinMode(buttonPin2, INPUT);
   pinMode(buttonPin3, INPUT);
   pinMode(buttonPin4, INPUT);
@@ -70,11 +72,13 @@ void loop()
 
 }
 
+//Play Function passes what song to play and then sets a 10 second delay so the buttons are deactivated.  Prevents double press by toddler.
+//See ReadME.md for list of songs
 void play(int s)
 {
     
     myDFPlayer.play(s);  //Play the first mp3
-    delay(10000);
+    delay(10000); //Adjust delay as needed
   
 
 }
